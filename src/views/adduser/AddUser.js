@@ -10,7 +10,6 @@ import {
 import React from "react";
 import { Box } from "@mui/material";
 import { FormTextField, FormPhone } from "../../common/StyledComponents";
-import ReactPhoneInput from "react-phone-input-material-ui";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -77,10 +76,7 @@ const AddUser = () => {
                   <FormTextField fullWidth label="Zip-code" size="small" />
                 </Grid>
                 <Grid item lg={6} md={10} sm={10} xs={10}>
-                  <ReactPhoneInput
-                    component={FormPhone}
-                    defaultCountry={"us"}
-                  />
+                <FormTextField fullWidth label="Phone Number" size="small" />
                 </Grid>
                 <Grid item lg={10} md={10} sm={10} xs={10}>
                   <FormTextField fullWidth label="Email" size="small" />

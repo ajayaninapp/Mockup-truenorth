@@ -78,7 +78,7 @@ const RouterContainer = () => {
             }
           />
           <Route
-            path="/signin"
+            path="truenorth/signin"
             element={
               <AuthLayout>
                 <SigninCard />
