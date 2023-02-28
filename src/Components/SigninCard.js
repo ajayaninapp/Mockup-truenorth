@@ -61,7 +61,7 @@ const SigninCard = () => {
                 paddingTop: "10px",
               }}
             >
-              <a href="/forgot-password">Forgot password?</a>
+              <a href="/Mockup-truenorth/forgot-password">Forgot password?</a>
             </Box>
           </Box>
         </Box>
