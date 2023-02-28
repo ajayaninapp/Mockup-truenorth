@@ -87,7 +87,7 @@ const RouterContainer = () => {
           />
           <Route
             exact
-            path="forgot-password/reset"
+            path="/reset-password"
             element={
               <MainLayout>
                 <ResetPassword />
