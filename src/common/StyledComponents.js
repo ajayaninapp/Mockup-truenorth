@@ -3,6 +3,7 @@ import { TableCell } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Box, Button, TextField } from "@mui/material";
 
+
 export const CustomTableCell = styled(TableCell)({
   padding: "14px",
   fontSize: "12px",
@@ -39,3 +40,34 @@ export const ThemedBox = styled(Box)({
   background: "linear-gradient(to right, #096dd9 0%, #096dd9 100%)",
   color: "white",
 });
+
+export const FormTextField=styled(TextField)({
+  margin:"5px 0 5px 0",
+  
+  '&:focus-within fieldset, &:focus-visible fieldset': {
+    border: '1.5px solid #FB6501!important',
+    color:"#FB6501 !important"
+   
+  },
+  "& label.Mui-focused": {
+    color: "black"
+  }
+})
+export const FormPhone=styled(TextField)({
+  margin:"5px 0 5px 0",
+  "& .MuiInputBase-root": {
+    height: 40
+},
+  '&:focus-within fieldset, &:focus-visible fieldset': {
+    border: '1.5px solid #FB6501!important',
+    color:"#FB6501 !important"
+   
+  },
+  "& label.Mui-focused": {
+    color: "black"
+  }
+})
+
+export const ThemedButton = styled(Button)({
+  height: "40px", background: "#FB6501",color:"white",margin:"20px"
+})

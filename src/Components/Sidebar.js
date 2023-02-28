@@ -24,6 +24,8 @@ import ContentPasteIcon from '@mui/icons-material/ContentPaste';
 import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import { fontSize } from '@mui/system';
+import { GroupAdd, PersonAdd } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 const drawerWidth = 240;
 
 const Sidebar = () => {
@@ -99,93 +101,68 @@ const Sidebar = () => {
         }}
       >
         <Toolbar />
-        <Box sx={{ overflow: "auto" }}>
-          <Divider />
+        <Box sx={{ overflow: "auto" }}my={3}>
           <List>
             <ListItem disableGutters sx={{paddingBottom:"20px"}}>
-              <ListItemButton>
-                <ListItemIcon>
-                  <DashboardIcon sx={{ color: "grey" }} />
-                  <ListItemText>
-                    <CustomListItemTypography>
-                      Dashboard
-                    </CustomListItemTypography>
-                  </ListItemText>
-                </ListItemIcon>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disableGutters disablePadding sx={{paddingBottom:"20px"}}>
-              <ListItemButton>
-                <ListItemIcon>
-                  <MenuBookIcon sx={{ color: "grey" }} />
-                  <ListItemText>
-                    <CustomListItemTypography>
-                      Catalogue
-                    </CustomListItemTypography>
-                  </ListItemText>
-                </ListItemIcon>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disableGutters disablePadding sx={{paddingBottom:"20px"}}>
+              <Link to="/customers">
               <ListItemButton>
                 <ListItemIcon>
                   <PeopleAltIcon sx={{ color: "grey" }} />
                   <ListItemText>
                     <CustomListItemTypography>
-                      Users
+                     Customer Listing
                     </CustomListItemTypography>
                   </ListItemText>
                 </ListItemIcon>
               </ListItemButton>
+              </Link>
             </ListItem>
             <ListItem disableGutters disablePadding sx={{paddingBottom:"20px"}}>
-              <ListItemButton>
+            <Link to="/customers/add-new">
+            <ListItemButton>
                 <ListItemIcon>
-                  <ContentPasteIcon sx={{ color: "grey" }} />
+                  <PersonAdd sx={{ color: "grey" }} />
                   <ListItemText>
                     <CustomListItemTypography>
-                      Purchase Orders
+                      Add Customer
                     </CustomListItemTypography>
                   </ListItemText>
                 </ListItemIcon>
               </ListItemButton>
+            </Link>
+              
             </ListItem>
             <ListItem disableGutters disablePadding sx={{paddingBottom:"20px"}}>
-              <ListItemButton>
+            <Link to="/users">
+            <ListItemButton>
                 <ListItemIcon>
-                  <DashboardIcon sx={{ color: "grey" }} />
+                  <PeopleAltIcon sx={{ color: "grey" }} />
                   <ListItemText>
                     <CustomListItemTypography>
-                      Facilities
+                     User Listing
                     </CustomListItemTypography>
                   </ListItemText>
                 </ListItemIcon>
               </ListItemButton>
-            </ListItem>
-            <ListItem disableGutters disablePadding sx={{paddingBottom:"20px"}}> 
-              <ListItemButton>
-                <ListItemIcon>
-                  <SignalCellularAltIcon sx={{ color: "grey" }} />
-                  <ListItemText>
-                    <CustomListItemTypography>
-                      Analytics
-                    </CustomListItemTypography>
-                  </ListItemText>
-                </ListItemIcon>
-              </ListItemButton>
+            </Link>
+              
             </ListItem>
             <ListItem disableGutters disablePadding sx={{paddingBottom:"20px"}}>
-              <ListItemButton>
+            <Link to="/users/add-new">
+            <ListItemButton>
                 <ListItemIcon>
-                  < ListAltIcon  sx={{ color: "grey" }} />
+                  <GroupAdd sx={{ color: "grey" }} />
                   <ListItemText>
                     <CustomListItemTypography>
-                      Departments
+                     Add Users
                     </CustomListItemTypography>
                   </ListItemText>
                 </ListItemIcon>
               </ListItemButton>
+            </Link>
+              
             </ListItem>
+            
           </List>
         </Box>
       </Drawer>

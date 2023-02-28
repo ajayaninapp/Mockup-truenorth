@@ -10,22 +10,21 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+    background: "red",
   }
   
   body {
-    height: 100%;
     font-family: 'Roboto', sans-serif;
-    background: "#F0F0F0",
+    background: "red",
    
   }
   
   a {
     text-decoration: none;
+    color: black;
   }
   
-  #root {
-    height: 100%;
-  }
+
   ::-webkit-scrollbar {
     width: 5px;
   }
@@ -36,4 +35,7 @@
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
+  }
+  .background{
+    background-color: rgb(224, 224, 224);
   }

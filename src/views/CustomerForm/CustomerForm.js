@@ -11,18 +11,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import { FormTextField, FormPhone } from "../../common/StyledComponents";
 import ReactPhoneInput from "react-phone-input-material-ui";
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-
-
-const AddUser = () => {
-  const [age, setAge] = React.useState('');
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+const CustomerForm = () => {
   return (
     <>
       <Box
@@ -49,31 +38,31 @@ const AddUser = () => {
                   marginBottom: "10px",
                 }}
               >
-                User Details
+                Customer Details
               </Typography>
               <Divider />
-              <Grid container spacing={3} sx={{ margin: "5px", width: "100%" }}>
-                <Grid item lg={5} md={10} sm={10} xs={10}>
+              <Grid container spacing={3} sx={{ padding: "15px", width: "100%" }}>
+                <Grid item lg={6} md={10} sm={10} xs={10}>
                   <FormTextField fullWidth label="First Name" size="small" />
                 </Grid>
                 <Grid item lg={5} md={10} sm={10} xs={10}>
                   <FormTextField fullWidth label="Last Name" size="small" />
                 </Grid>
-                <Grid item lg={10} md={10} sm={10} xs={10}>
+                <Grid item lg={11} md={10} sm={10} xs={10}>
                   <FormTextField
                     fullWidth
                     label="Address Line 1"
                     size="small"
                   />
                 </Grid>
-                <Grid item lg={10} md={10} sm={10} xs={10}>
+                <Grid item lg={11} md={10} sm={10} xs={10}>
                   <FormTextField
                     fullWidth
                     label="Address Line 2"
                     size="small"
                   />
                 </Grid>
-                <Grid item lg={4} md={10} sm={10} xs={10}>
+                <Grid item lg={5} md={10} sm={10} xs={10}>
                   <FormTextField fullWidth label="Zip-code" size="small" />
                 </Grid>
                 <Grid item lg={6} md={10} sm={10} xs={10}>
@@ -82,28 +71,19 @@ const AddUser = () => {
                     defaultCountry={"us"}
                   />
                 </Grid>
-                <Grid item lg={10} md={10} sm={10} xs={10}>
+                <Grid item lg={11} md={10} sm={10} xs={10}>
                   <FormTextField fullWidth label="Email" size="small" />
                 </Grid>
-                
-                <Grid item lg={10} md={10} sm={10} xs={10}>
-                  <FormControl fullWidth size="small">
-                    <InputLabel id="demo-simple-select-label">Customer</InputLabel>
-                    <Select
-                      labelId="demo-simple-select-label"
-                      id="demo-simple-select"
-                      value={age}
-                      label="Customer"
-                      onChange={handleChange}
-                    >
-                      <MenuItem value="TrueNorth">TrueNorth</MenuItem>
-                     
-                    </Select>
-                  </FormControl>
+                <Grid item lg={11} md={10} sm={10} xs={10}>
+                  <FormTextField
+                    fullWidth
+                    label="Map-Box-License-Key"
+                    size="small"
+                  />
                 </Grid>
                 <Grid
                   item
-                  lg={12}
+                  lg={11}
                   md={10}
                   sm={10}
                   xs={10}
@@ -125,4 +105,4 @@ const AddUser = () => {
   );
 };
 
-export default AddUser;
+export default CustomerForm;
