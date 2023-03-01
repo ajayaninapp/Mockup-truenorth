@@ -68,7 +68,7 @@ const SigninCard = () => {
               }}
               onClick={()=>handleClick()}
             >
-              <a >Forgot password?</a>
+              <Link onClick={()=>handleClick()}>Forgot password?</Link>
             </Box>
           </Box>
         </Box>
