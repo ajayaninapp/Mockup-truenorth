@@ -13,20 +13,18 @@ import EditIcon from '@mui/icons-material/Edit';
 import { IconButton } from '@mui/material';
 
 
-const edit=(
+const actions=(
     <div>
-        <IconButton>
+        <IconButton sx={{marginRight:"5px"}}>
             <EditIcon/>
         </IconButton>
-    </div>
-)
-const remove=(
-    <div>
+
         <IconButton>
             <DeleteIcon/>
         </IconButton>
     </div>
 )
+
 
 const columns = [
     { id: 'name', label: 'Company Name'},
@@ -46,13 +44,11 @@ const columns = [
         label: 'Map Box Key'
     },
     {
-        id: 'edit',
-        label: 'Edit'
+        id: 'actions',
+        label: 'Actions',
+        align:"center"
     },
-    {
-        id: 'remove',
-        label: 'Remove Client'
-    },
+
 ];
 
 
@@ -61,7 +57,7 @@ function createData(
     name, address, email, phone,box_key 
 ) {
 
-    return { name, address, email, phone,box_key,edit,remove};
+    return { name, address, email, phone,box_key,actions};
 }
 
 const rows = [

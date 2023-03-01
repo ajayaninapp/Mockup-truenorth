@@ -37,7 +37,7 @@ const CustomerForm = () => {
                   marginBottom: "10px",
                 }}
               >
-                Customer Details
+                Client Details
               </Typography>
               <Divider />
               <Grid container spacing={3} sx={{ padding: "15px", width: "100%" }}>
@@ -89,7 +89,7 @@ const CustomerForm = () => {
                     variant="contained"
                     sx={{ height: "40px", background: "#FB6501" }}
                   >
-                    Create Customer
+                    Create Client
                   </Button>
                 </Grid>
               </Grid>
