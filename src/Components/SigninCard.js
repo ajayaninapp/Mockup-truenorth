@@ -3,8 +3,13 @@ import { Container } from "@mui/material";
 import { padding } from "@mui/system";
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SigninCard = () => {
+  const navigate = useNavigate();
+  const handleClick =()=>{
+    navigate("/forgot-password")
+  }
   return (
     <Box
       sx={{
@@ -50,6 +55,7 @@ const SigninCard = () => {
                 variant="contained"
                 sx={{ height: "40px", background: "#FB6501", marginY: "10px" }}
                 fullWidth
+                
               >
                 Sign in
               </Button>
@@ -60,8 +66,9 @@ const SigninCard = () => {
                 flexDirection: "row-reverse",
                 paddingTop: "10px",
               }}
+              onClick={()=>handleClick()}
             >
-              <a href="/Mockup-truenorth/forgot-password">Forgot password?</a>
+              <Link onClick={()=>handleClick()}>Forgot password?</Link>
             </Box>
           </Box>
         </Box>

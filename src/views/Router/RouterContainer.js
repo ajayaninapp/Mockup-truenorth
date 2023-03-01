@@ -61,16 +61,16 @@ const RouterContainer = () => {
               </MainLayout>
             }
           />
-          {/* <Route
-            path="/Mockup-truenorth/forgot-password"
+          <Route
+            path="/forgot-password"
             element={
               <AuthLayout>
                 <EmailBox/>
               </AuthLayout>
             }
-          /> */}
+          />
           <Route
-            path="/Mockup-truenorth/forgot-password"
+            path="/forgot-password/reset"
             element={
               <AuthLayout>
                 <ForgotPasswordForm/>
