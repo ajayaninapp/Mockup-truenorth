@@ -8,12 +8,28 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import { CustomTableHeadCell } from '../../common/StyledComponents';
-import { minWidth } from '@mui/system';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import { IconButton } from '@mui/material';
 
 
+const edit=(
+    <div>
+        <IconButton>
+            <EditIcon/>
+        </IconButton>
+    </div>
+)
+const remove=(
+    <div>
+        <IconButton>
+            <DeleteIcon/>
+        </IconButton>
+    </div>
+)
 
 const columns = [
-    { id: 'name', label: 'Name'},
+    { id: 'name', label: 'Company Name'},
     {
         id: 'address',
         label: 'Address',
@@ -29,6 +45,14 @@ const columns = [
         id: 'box_key',
         label: 'Map Box Key'
     },
+    {
+        id: 'edit',
+        label: 'Edit'
+    },
+    {
+        id: 'remove',
+        label: 'Remove Client'
+    },
 ];
 
 
@@ -37,30 +61,26 @@ function createData(
     name, address, email, phone,box_key 
 ) {
 
-    return { name, address, email, phone,box_key };
+    return { name, address, email, phone,box_key,edit,remove};
 }
 
 const rows = [
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
-    createData('Ajayan', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
+    createData('Truenorth', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
+    createData('Truenorth', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
+    createData('Truenorth', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
+    createData('Truenorth', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
+    createData('Truenorth', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
+    createData('Truenorth', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
+    createData('Truenorth', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
+    createData('Truenorth', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
+    createData('Truenorth', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
+    createData('Truenorth', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
+    createData('Truenorth', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
+    createData('Truenorth', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
+    createData('Truenorth', 'Keas 69 Str. 15234, Chalandri Athens, Greece', 1324171354, "+30-2106019311", "30-2106019311"),
+
+
+
 
 ];
 

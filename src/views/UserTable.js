@@ -8,9 +8,26 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import { CustomTableHeadCell } from '../common/StyledComponents';
+import { IconButton } from '@mui/material';
+import {  Edit } from '@mui/icons-material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
 
-
+const edit=(
+    <div>
+        <IconButton>
+            <EditIcon/>
+        </IconButton>
+    </div>
+)
+const remove=(
+    <div>
+        <IconButton>
+            <DeleteIcon/>
+        </IconButton>
+    </div>
+)
 const columns = [
     { id: 'name', label: 'Name'},
     { id: 'email', label: 'Email'},
@@ -24,8 +41,20 @@ const columns = [
     },
     {
         id: 'role',
-        label: 'role'
+        label: 'Role'
     },
+    {
+        id: 'edit',
+        label: 'Edit'
+    },
+    
+    {
+        id: 'remove',
+        label: 'Delete User'
+    },
+    
+    
+
 ];
 
 
@@ -34,7 +63,7 @@ function createData(
     name, email, phone, client, role
 ) {
 
-    return { name, email, phone, client, role };
+    return { name, email, phone, client, role ,edit,remove};
 }
 
 const rows = [

@@ -110,7 +110,7 @@ const Sidebar = () => {
                   <PeopleAltIcon sx={{ color: "grey" }} />
                   <ListItemText>
                     <CustomListItemTypography>
-                     Customer Listing
+                     Client Listing
                     </CustomListItemTypography>
                   </ListItemText>
                 </ListItemIcon>
@@ -124,7 +124,7 @@ const Sidebar = () => {
                   <PersonAdd sx={{ color: "grey" }} />
                   <ListItemText>
                     <CustomListItemTypography>
-                      Add Customer
+                      Add Client
                     </CustomListItemTypography>
                   </ListItemText>
                 </ListItemIcon>
