@@ -26,7 +26,6 @@ const ToolbarView = (props) => {
           <TextField fullWidth placeholder="Search users...." />
         </Box>
         <Box sx={{ width: "150px" }}>      
-           
             <Button
               variant="contained"
               fullWidth
@@ -35,7 +34,6 @@ const ToolbarView = (props) => {
             >
               Add New
             </Button>
-           
         </Box>
       </Box>
     </>
