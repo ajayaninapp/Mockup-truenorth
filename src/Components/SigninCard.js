@@ -45,7 +45,7 @@ const SigninCard = () => {
               sx={{ marginY: "10px" }}
               fullWidth
             />
-            <Link to="/">
+            <Link to="/users">
               <Button
                 variant="contained"
                 sx={{ height: "40px", background: "#FB6501", marginY: "10px" }}
@@ -61,7 +61,7 @@ const SigninCard = () => {
                 paddingTop: "10px",
               }}
             >
-              <a href="/Mockup-truenorth/forgot-password">Forgot password?</a>
+              <a href="/forgot-password">Forgot password?</a>
             </Box>
           </Box>
         </Box>
