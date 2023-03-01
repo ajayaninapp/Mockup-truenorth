@@ -45,7 +45,7 @@ const SigninCard = () => {
               sx={{ marginY: "10px" }}
               fullWidth
             />
-            <Link to="/users">
+            <Link to="/">
               <Button
                 variant="contained"
                 sx={{ height: "40px", background: "#FB6501", marginY: "10px" }}
