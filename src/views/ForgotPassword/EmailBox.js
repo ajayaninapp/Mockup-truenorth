@@ -36,12 +36,12 @@ const EmailBox = () => {
                 
               }}
             >
-              <Typography variant="h6" sx={{ paddingBottom: "30px",color:"grey" }}>
+              <Typography variant="h6" sx={{ paddingBottom: "30px",color:"grey"}}> 
                 Enter your registered email address
               </Typography>
              <Box width="80%">
              <FormTextField fullWidth />
-             <Link to="/forgot-password/reset"><ThemedButton sx={{width:"50%"}}>Continue</ThemedButton></Link>
+             <Link to="/forgot-password/reset"><ThemedButton variant="contained" sx={{width:"50%"}}>Continue</ThemedButton></Link>
              </Box>
             </Card>
           </Box>
