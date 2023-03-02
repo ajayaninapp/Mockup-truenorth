@@ -1,6 +1,25 @@
 import React from "react";
 import { Paper,Card, Box, Typography, TextField, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+
 const ResetPassword = () => {
+  const [oldPassword, setOldPassword] = React.useState('');
+  const [newPassword, setNewPassword] = React.useState('');
+  const [confirmPassword, setConfirmPassword] = React.useState('');
+  const navigate = useNavigate();
+
+  const continueHandler=() => {
+    if(!oldPassword || !newPassword || !confirmPassword ){
+      toast.warn("Please enter the details")
+    }
+    else{
+      toast.success("Password successfully reset")
+      setTimeout(()=>{
+        navigate("/Mockup-truenorth/")
+      }, 800)
+    }
+  }
   return (
     <>
       <Box
@@ -41,6 +60,7 @@ const ResetPassword = () => {
                 placeholder="Old Password"
                 sx={{ marginTop: "50px" }}
                 fullWidth
+                onChange={(event)=>setOldPassword(event.target.value)}
               />
               <TextField
                 label="New Password"
@@ -48,6 +68,7 @@ const ResetPassword = () => {
                 placeholder="New Password"
                 sx={{ marginTop: "20px" }}
                 fullWidth
+                onChange={(event)=>setNewPassword(event.target.value)}
               />
               <TextField
                 label="Confirm Password"
@@ -55,6 +76,7 @@ const ResetPassword = () => {
                 placeholder="Confirm Password"
                 sx={{ marginY: "20px" }}
                 fullWidth
+                onChange={(event)=>setConfirmPassword(event.target.value)}
               />
               <Button
                 variant="contained"
@@ -64,9 +86,11 @@ const ResetPassword = () => {
                   marginTop: "20px",
                 }}
                 fullWidth
+                onClick={()=>continueHandler()}
               >
                 Continue
               </Button>
+              <ToastContainer />
             </Box>
           </Box>
         </Paper>

@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const SigninCard = () => {
   const navigate = useNavigate();
   const signinHandler = () =>{
-      if(email === "" || password === ""){
+      if(!email || !password){
         toast.warn("Please enter the details")
       }
       else{
