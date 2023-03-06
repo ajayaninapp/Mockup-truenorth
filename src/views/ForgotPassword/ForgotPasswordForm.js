@@ -1,6 +1,25 @@
 import React from "react";
 import { Card, Box, Typography, TextField, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+
 const ForgotPasswordForm = () => {
+  const [verificationCode, setVerificationCode] = React.useState('');
+  const [newPassword, setNewPassword] = React.useState('');
+  const [confirmPassword, setConfirmPassword] = React.useState('');
+  const navigate = useNavigate();
+
+  const continueHandler=() => {
+    if(!verificationCode || !newPassword || !confirmPassword ){
+      toast.warn("Please enter the details")
+    }
+    else{
+      toast.success("Password successfully reset")
+      setTimeout(()=>{
+        navigate("/Mockup-truenorth/")
+      }, 800)
+    }
+  }
   return (
     <Box
       sx={{
@@ -33,6 +52,7 @@ const ForgotPasswordForm = () => {
               placeholder="Verification Code"
               sx={{ marginTop: "50px" }}
               fullWidth
+              onChange={(event)=>setVerificationCode(event.target.value)}
             />
             <TextField
               label="New Password"
@@ -40,6 +60,7 @@ const ForgotPasswordForm = () => {
               placeholder="New Password"
               sx={{ marginTop: "20px" }}
               fullWidth
+              onChange={(event)=>setNewPassword(event.target.value)}
             />
             <TextField
               label="Confirm Password"
@@ -47,14 +68,17 @@ const ForgotPasswordForm = () => {
               placeholder="Confirm Password"
               sx={{ marginY: "20px" }}
               fullWidth
+              onChange={(event)=>setConfirmPassword(event.target.value)}
             />
             <Button
               variant="contained"
               sx={{ height: "40px", background: "#FB6501", marginTop: "20px" }}
               fullWidth
+              onClick={()=>continueHandler()}
             >
               Continue
             </Button>
+            <ToastContainer />
           </Box>
         </Box>
       </Card>

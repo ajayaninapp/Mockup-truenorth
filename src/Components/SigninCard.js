@@ -1,15 +1,27 @@
 import { Card, Box, Typography, TextField, Button } from "@mui/material";
 import { Container } from "@mui/material";
 import { padding } from "@mui/system";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SigninCard = () => {
   const navigate = useNavigate();
+  const signinHandler = () =>{
+      if(!email || !password){
+        toast.warn("Please enter the details")
+      }
+      else{
+        navigate("/")
+      }
+  }
   const handleClick =()=>{
     navigate("/forgot-password")
   }
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   return (
     <Box
       sx={{
@@ -42,6 +54,7 @@ const SigninCard = () => {
               placeholder="Email"
               sx={{ marginTop: "40px", marginBottom: "10px" }}
               fullWidth
+              onChange={(event)=>{setEmail(event.target.value)}}
             />
             <TextField
               label="Password"
@@ -49,17 +62,19 @@ const SigninCard = () => {
               placeholder="Password"
               sx={{ marginY: "10px" }}
               fullWidth
+              onChange={(event)=>{setPassword(event.target.value)}}
             />
-            <Link to="/">
+     
               <Button
                 variant="contained"
                 sx={{ height: "40px", background: "#FB6501", marginY: "10px" }}
                 fullWidth
-                
+                onClick={()=>signinHandler()}
               >
                 Sign in
               </Button>
-            </Link>
+              <ToastContainer />
+              
             <Box
               sx={{
                 display: "flex",

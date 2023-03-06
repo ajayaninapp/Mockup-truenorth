@@ -78,7 +78,7 @@ const RouterContainer = () => {
             }
           />
           <Route
-            path="/Mockup-truenorth"
+            path="/Mockup-truenorth/"
             element={
               <AuthLayout>
                 <SigninCard />

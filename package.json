@@ -1,5 +1,5 @@
 {
-  "homepage": "http://ajayaninapp.github.io/Mockup-truenorth",
+  "homepage": "http://rohith-sk.github.io/Mockup-truenorth",
   "name": "mockup",
   "version": "0.1.0",
   "private": true,
@@ -15,6 +15,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "react-toastify": "^9.1.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
