@@ -8,12 +8,18 @@ import CustomerView from "../views/CustomerView/CustomerView";
 import CustomerForm from "../views/CustomerForm/CustomerForm";
 
 const MainLayout = (props) => {
-  const show=true;
+  const show=true
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+      setMobileOpen(!mobileOpen);
+      console.log(mobileOpen)
+  };
   return (
     <Box>
-      <Header  show={show}/>
+      <Header  show={show}  handleDrawerToggle={handleDrawerToggle}/>
       <Box sx={{ display: "flex" }}>
-        <Sidebar />
+        <Sidebar mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle}/>
         <Box
           p={3}
           sx={{

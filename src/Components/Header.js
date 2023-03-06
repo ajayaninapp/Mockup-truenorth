@@ -16,8 +16,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import Avatar from "@mui/material/Avatar";
 import Divider from "@mui/material/Divider";
 import { Link } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
 const Header = (props) => {
-  const {show}=props
+  const { show, handleDrawerToggle } = props;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -45,24 +46,43 @@ const Header = (props) => {
           height: "10vh",
         }}
       >
+        <IconButton
+          size="large"
+          onClick={() => handleDrawerToggle()}
+          sx={{
+            display: {
+              xs: "block",
+              sm: "block",
+              md: "none",
+              lg: "none",
+              xl: "none",
+            },
+          }}
+        >
+          <MenuIcon
+            sx={{ color: "#FF6600", fontSize: "30px", marginRight: "30px" }}
+          />
+        </IconButton>
         <IconButton size="large" edge="start">
           <ShareLocation sx={{ color: "#FF6600", fontSize: "30px" }} />
         </IconButton>
         <Typography sx={{ flexGrow: 1, fontSize: "30px", fontWeight: "200" }}>
           TrueNorth
         </Typography>
-        {show?(<Tooltip title="Account Settings">
-          <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            color="inherit"
-            onClick={handleClick}
-          >
-            <AccountCircle />
-          </IconButton>
-        </Tooltip>):null}
+        {show ? (
+          <Tooltip title="Account Settings">
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              color="inherit"
+              onClick={handleClick}
+            >
+              <AccountCircle />
+            </IconButton>
+          </Tooltip>
+        ) : null}
         <Menu
           anchorEl={anchorEl}
           id="account-menu"
@@ -103,20 +123,20 @@ const Header = (props) => {
           </MenuItem>
           <Divider />
           <Link to="/reset-password">
-          <MenuItem onClick={handleClose}>
-            <ListItemIcon>
-              <Settings fontSize="small" />
-            </ListItemIcon>
-            Change Password
-          </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <ListItemIcon>
+                <Settings fontSize="small" />
+              </ListItemIcon>
+              Change Password
+            </MenuItem>
           </Link>
-          <Link to="/Mockup-truenorth/" sx={{color:"black"}}>
-          <MenuItem onClick={handleClose}>
-            <ListItemIcon>
-              <Logout fontSize="small" />
-            </ListItemIcon>
-            Logout
-          </MenuItem>
+          <Link to="/Mockup-truenorth/" sx={{ color: "black" }}>
+            <MenuItem onClick={handleClose}>
+              <ListItemIcon>
+                <Logout fontSize="small" />
+              </ListItemIcon>
+              Logout
+            </MenuItem>
           </Link>
         </Menu>
       </Toolbar>
