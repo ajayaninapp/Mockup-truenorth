@@ -86,6 +86,14 @@ const RouterContainer = () => {
             }
           />
           <Route
+            path="/sign-in"
+            element={
+              <AuthLayout>
+                <SigninCard />
+              </AuthLayout>
+            }
+          />
+          <Route
             exact
             path="/reset-password"
             element={

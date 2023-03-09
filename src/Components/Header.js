@@ -4,6 +4,7 @@ import {
   IconButton,
   Typography,
   Tooltip,
+  Box
 } from "@mui/material";
 import React from "react";
 import { ShareLocation, AccountCircle, Height } from "@mui/icons-material";
@@ -17,7 +18,9 @@ import Avatar from "@mui/material/Avatar";
 import Divider from "@mui/material/Divider";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useNavigate } from "react-router-dom";
 const Header = (props) => {
+  const navigate=useNavigate();
   const { show, handleDrawerToggle } = props;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -27,6 +30,14 @@ const Header = (props) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const home=()=>{
+     if(show){
+      navigate("/")
+     }
+     else{
+      navigate("/sign-in")
+     }
+  }
 
   return (
     <AppBar
@@ -63,12 +74,18 @@ const Header = (props) => {
             sx={{ color: "#FF6600", fontSize: "30px", marginRight: "30px" }}
           />
         </IconButton>
-        <IconButton size="large" edge="start">
+        <Box sx={{flexGrow: 1,}}>
+        <IconButton size="large" edge="start" onClick={()=>home()}>
           <ShareLocation sx={{ color: "#FF6600", fontSize: "30px" }} />
+          <Typography sx={{  fontSize: "30px", fontWeight: "200" ,color:'white'}}>
+            TrueNorth
+          </Typography>
         </IconButton>
-        <Typography sx={{ flexGrow: 1, fontSize: "30px", fontWeight: "200" }}>
-          TrueNorth
-        </Typography>
+        </Box>
+        
+
+         
+
         {show ? (
           <Tooltip title="Account Settings">
             <IconButton
